@@ -4,6 +4,7 @@ import Todo from "../views/Todo.vue";
 import About from "../views/About.vue";
 import Photos from "../views/Photos.vue";
 import Axios from "../views/Axios.vue";
+import PageNotFound from "../components/PageNotFound.vue";
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/axios",
     name: "Axios",
     component: Axios,
+  },
+  {
+    path: '*',
+    name: "PageNotFound",
+    component: PageNotFound,
   },
 ]
 
