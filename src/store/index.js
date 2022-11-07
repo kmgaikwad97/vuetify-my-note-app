@@ -49,7 +49,7 @@ export default new Vuex.Store({
     ],
     snackbar:{
       show:true,
-      text:"hello mother flipper",
+      text:"",
     timeout: 1100,
 
     }
