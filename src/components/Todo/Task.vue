@@ -9,7 +9,7 @@
             <v-list-item-content>
                 <v-list-item-title :class="{ 'text-decoration-line-through': task.done }">{{ task.title }}</v-list-item-title>
             </v-list-item-content>
-            <v-list-item-action @click.stop="$store.commit('deleteTask', task.id)">
+            <v-list-item-action @click.stop="$store.dispatch('deleteTask', task.id)">
                 <v-btn icon>
                     <v-icon color="primary lighten-1">mdi-delete</v-icon>
                 </v-btn>

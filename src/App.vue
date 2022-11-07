@@ -64,6 +64,7 @@
         <!--  -->
         <!-- If using vue-router -->
         <router-view></router-view>
+        <snackbar />
     </v-main>
 </v-app>
 </template>
@@ -103,8 +104,12 @@ export default {
                     to: "/axios"
                 },
             ],
-            // right: null,
+            // right: null  ,
+            
         };
     },
+    components:{
+                'snackbar': require('@/components/Shared/Snackbar.vue').default
+            }
 };
 </script>
