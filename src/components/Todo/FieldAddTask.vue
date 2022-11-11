@@ -9,7 +9,20 @@
     append-icon="mdi-plus-circle"
     hide-details
     clearable
-  ></v-text-field>
+  >
+  
+<!-- forms text-field starts -->
+   <template v-slot:append>
+              <v-icon
+              @click="addTask"
+              color="primary"
+              :disabled="!newTaskTitle"
+              >mdi-plus</v-icon>
+            </template>
+<!-- forms text-field starts -->
+  
+
+  </v-text-field>
 </template>
 
 <script>
@@ -20,12 +33,20 @@ export default {
       newTaskTitle: "",
     };
   },
+  computed:{
+    newTaskTitleInvalid(){
+      return !this.newTaskTitle
+    }
+  },
 
   methods: {
     addTask() {
-      // this.$store.commit("addTask", this.newTaskTitle);
-      this.$store.dispatch("addTask", this.newTaskTitle);
-      this.newTaskTitle = "";
+      if(!this.newTaskTitleInvalid){
+        // this.$store.commit("addTask", this.newTaskTitle);
+        this.$store.dispatch("addTask", this.newTaskTitle);
+        this.newTaskTitle = "";
+      }
+
     },
   },
 };

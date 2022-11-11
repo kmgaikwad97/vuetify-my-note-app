@@ -21,31 +21,31 @@ export default new Vuex.Store({
         title: "Clean Yourself",
         done: false,
       },
-      {
-        id: 4,
-        title: "Make Food",
-        done: false,
-      },
-      {
-        id: 5,
-        title: "Drink Beer",
-        done: false,
-      },
-      {
-        id: 6,
-        title: "Go For Outing",
-        done: false,
-      },
-      {
-        id: 7,
-        title: "Play Music",
-        done: false,
-      },
-      {
-        id: 8,
-        title: "Go To Bed",
-        done: false,
-      },
+      // {
+      //   id: 4,
+      //   title: "Make Food",
+      //   done: false,
+      // },
+      // {
+      //   id: 5,
+      //   title: "Drink Beer",
+      //   done: false,
+      // },
+      // {
+      //   id: 6,
+      //   title: "Go For Outing",
+      //   done: false,
+      // },
+      // {
+      //   id: 7,
+      //   title: "Play Music",
+      //   done: false,
+      // },
+      // {
+      //   id: 8,
+      //   title: "Go To Bed",
+      //   done: false,
+      // },
     ],
     snackbar:{
       show:false,
@@ -79,9 +79,14 @@ export default new Vuex.Store({
       task.done = !task.done;
     },
     deleteTask(state,id) {
-      console.log("data", id);
+      // console.log("data", id);
       state.tasks = state.tasks.filter(task => task.id !== id);
-      console.log("asdf", state.tasks);
+      // console.log("asdf", state.tasks);
+    },
+    updateTaskTitle(state,payload){
+      console.log('payload:',payload);
+      let task = state.tasks.filter(task => task.id === payload.id)[0];
+      task.title = payload.title
     },
     showSnackbar(state,text){
       let timeout = 0;
@@ -106,6 +111,10 @@ export default new Vuex.Store({
     deleteTask({commit}, id){
       commit('deleteTask',id)
       commit('showSnackbar','Task Deleted !')
+    },
+    updateTaskTitle({commit}, payload){
+      commit('updateTaskTitle', payload)
+      commit('showSnackbar','Task Updated !')
     }
   },
   modules: {
