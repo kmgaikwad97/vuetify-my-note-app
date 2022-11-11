@@ -1,7 +1,6 @@
 <template>
   <v-text-field
     v-model="newTaskTitle"
-    @click:append="addTask"
     @keyup.enter="addTask"
     class="pa-3"
     outlined
@@ -16,7 +15,7 @@
               <v-icon
               @click="addTask"
               color="primary"
-              :disabled="!newTaskTitle"
+              :disabled="newTaskTitleInvalid"
               >mdi-plus</v-icon>
             </template>
 <!-- forms text-field starts -->
@@ -44,7 +43,7 @@ export default {
       if(!this.newTaskTitleInvalid){
         // this.$store.commit("addTask", this.newTaskTitle);
         this.$store.dispatch("addTask", this.newTaskTitle);
-        this.newTaskTitle = "";
+        this.newTaskTitle = ""
       }
 
     },
