@@ -2,15 +2,22 @@
   <v-app id="inspire">
     <!-- naviagtion drawer starts -->
 
-    <v-navigation-drawer v-model="drawer" app>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6"> Kshitij App </v-list-item-title>
-          <v-list-item-subtitle> API Integration </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
+    <v-navigation-drawer v-model="drawer" :mobile-breakpoint="768" app>
+      <v-img
+        class="pa-4 pt-5"
+        height="150"
+        src="./assets/mountains.png"
+        gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+      >
+        <v-avatar size="70" class="mb-2">
+          <img
+            src="https://avatars.githubusercontent.com/u/97344369?v=4"
+            alt="Kshitij Gaikwad"
+          />
+        </v-avatar>
+        <div class="white--text text-subtitle-1 font-weight-bold">Kshitij Gaikwad</div>
+        <div class="white--text text-subtitle-2">kmgaikwad97</div>
+      </v-img>
 
       <v-list dense nav>
         <v-list-item v-for="item in items" :key="item.title" :to="item.to" link>
@@ -28,7 +35,14 @@
     <!-- naviagtion drawer ends -->
 
     <!-- NAV-BAR STARTS -->
-    <v-app-bar app color="primary" dark prominent src="./assets/mountains.png">
+    <v-app-bar
+      app
+      color="primary"
+      height="150"
+      dark
+      prominent
+      src="./assets/mountains.png"
+    >
       <!-- <v-app-bar
       app
       color="primary"
@@ -44,7 +58,7 @@
       </template>
 
       <!-- grid starts -->
-      <v-container class="pa-0">
+      <v-container class="header-container pa-0">
         <v-row>
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
@@ -53,7 +67,7 @@
           <v-app-bar-title class="text-h4 ml-4">Vuetify Todo</v-app-bar-title>
         </v-row>
         <v-row>
-          <live-date-time/>
+          <live-date-time />
         </v-row>
       </v-container>
       <!-- grid ends -->
@@ -125,7 +139,12 @@ export default {
   components: {
     search: require("@/components/Tools/Search.vue").default,
     snackbar: require("@/components/Shared/Snackbar.vue").default,
-    'live-date-time': require("@/components/Tools/LiveDateTime.vue").default
+    "live-date-time": require("@/components/Tools/LiveDateTime.vue").default,
   },
 };
 </script>
+
+<style lang="sass">
+.header-container
+  max-width:none important
+</style>
