@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    search:null,
     tasks: [
       {
         id: 1,
@@ -57,9 +58,15 @@ export default new Vuex.Store({
 
     }
   },
-  getters: {
-  },
+  
   mutations: { 
+
+    // **** Search starts ****
+    setSearch(state,value){
+      console.log('value',value);
+      state.search = value
+    },
+    // **** Search ends ****
 
     // ******* have to convet "this" to "state" *****
     // ******* No Async will Work here ******
@@ -129,6 +136,12 @@ export default new Vuex.Store({
       commit('showSnackbar','Due Date Updated !')
     }
   },
-  modules: {
-  }
+  getters: {
+    tasksFiltered(state){
+      if(!state.search){
+        return state.tasks
+      }
+      return state.tasks.filter(task=>task.title.toLocaleLowerCase().includes(state.search.toLocaleLowerCase()))
+    }
+  },
 })  

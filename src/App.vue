@@ -43,13 +43,19 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <!-- grid starts -->
+      <v-container class="pa-0">
+        <v-row>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+        </v-row>
+        <v-row>
+          <v-app-bar-title class="ml-4" >Vuetify Todo</v-app-bar-title>
+        </v-row>
+      </v-container>
+      <!-- grid ends -->
 
-      <v-app-bar-title>Vuetify Todo</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <search/>
+      <search />
 
       <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
