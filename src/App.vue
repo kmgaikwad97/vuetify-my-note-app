@@ -49,17 +49,19 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      <search/>
 
-      <v-btn icon>
+      <!-- <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn> -->
+
+      <!-- <v-btn icon>
         <v-icon>mdi-heart</v-icon>
       </v-btn>
 
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
     <!-- NAV-BAR ENDS -->
 
@@ -112,6 +114,7 @@ export default {
     };
   },
   components: {
+    search: require("@/components/Tools/Search.vue").default,
     snackbar: require("@/components/Shared/Snackbar.vue").default,
   },
 };
