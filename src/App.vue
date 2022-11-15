@@ -65,7 +65,7 @@
         </v-row>
         <v-row>
           <v-app-bar-title class="text-h4 ml-4"
-            >{{appTitle}}</v-app-bar-title
+            >{{$store.state.appTitle}}</v-app-bar-title
           >
         </v-row>
         <v-row>
