@@ -40,4 +40,12 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  // return false
+  // console.log('to', to);
+  // console.log('from',from);
+  document.title = `${process.env.VUE_APP_TITLE} - ${to.name}`
+  next();
+})
+
 export default router
