@@ -50,7 +50,10 @@
           <v-spacer></v-spacer>
         </v-row>
         <v-row>
-          <v-app-bar-title class="ml-4" >Vuetify Todo</v-app-bar-title>
+          <v-app-bar-title class="text-h4 ml-4">Vuetify Todo</v-app-bar-title>
+        </v-row>
+        <v-row>
+          <live-date-time/>
         </v-row>
       </v-container>
       <!-- grid ends -->
@@ -122,6 +125,7 @@ export default {
   components: {
     search: require("@/components/Tools/Search.vue").default,
     snackbar: require("@/components/Shared/Snackbar.vue").default,
+    'live-date-time': require("@/components/Tools/LiveDateTime.vue").default
   },
 };
 </script>
