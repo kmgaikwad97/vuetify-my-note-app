@@ -5,7 +5,7 @@
     <v-navigation-drawer v-model="drawer" :mobile-breakpoint="768" app>
       <v-img
         class="pa-4 pt-5"
-        height="150"
+        height="200"
         src="./assets/mountains.png"
         gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
       >
@@ -15,7 +15,9 @@
             alt="Kshitij Gaikwad"
           />
         </v-avatar>
-        <div class="white--text text-subtitle-1 font-weight-bold">Kshitij Gaikwad</div>
+        <div class="white--text text-subtitle-1 font-weight-bold">
+          Kshitij Gaikwad
+        </div>
         <div class="white--text text-subtitle-2">kmgaikwad97</div>
       </v-img>
 
@@ -38,7 +40,7 @@
     <v-app-bar
       app
       color="primary"
-      height="150"
+      height="200"
       dark
       prominent
       src="./assets/mountains.png"
@@ -64,12 +66,15 @@
           <v-spacer></v-spacer>
         </v-row>
         <v-row>
-          <v-app-bar-title class="text-h4 ml-4"
-            >{{$store.state.appTitle}}</v-app-bar-title
-          >
+          <v-app-bar-title class="text-h4 ml-4">{{
+            $store.state.appTitle
+          }}</v-app-bar-title>
         </v-row>
         <v-row>
           <live-date-time />
+        </v-row>
+        <v-row>
+          <field-add-task />
         </v-row>
       </v-container>
       <!-- grid ends -->
@@ -139,22 +144,23 @@ export default {
     };
   },
   components: {
+    "field-add-task": require("@/components/Todo/FieldAddTask.vue").default,
     search: require("@/components/Tools/Search.vue").default,
     snackbar: require("@/components/Shared/Snackbar.vue").default,
     "live-date-time": require("@/components/Tools/LiveDateTime.vue").default,
   },
-  computed:{
-    appTitle(){
-      return process.env.VUE_APP_TITLE
-    }
+  computed: {
+    appTitle() {
+      return process.env.VUE_APP_TITLE;
+    },
   },
-  mounted(){
-    this.$store.dispatch('getTasks')
+  mounted() {
+    this.$store.dispatch("getTasks");
   },
 };
 </script>
 
 <style lang="sass">
 .header-container
-  max-width:none important
+  max-width: none important
 </style>

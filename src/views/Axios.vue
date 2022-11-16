@@ -2,63 +2,32 @@
   <div class="photos pa-6">
     <h1>This is Photos Page</h1>
 
-    <v-row >
-      <v-flex v-for="productd in product" :key="productd.id" cols="md-3" class="pa-3">
-        <v-img
-        
-          :src="productd.image"
-          max-height="100%"
-          width="50%"
-          :lazy-src="productd.image"
-          aspect-ratio="1.5"
-          contain
-          class="grey lighten-2 pa-2"
-        >
-          <template v-slot:placeholder>
-            <v-row class="fill-height ma-0" align="center" justify="center">
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              ></v-progress-circular>
-            </v-row>
-          </template>
-        </v-img>
-      </v-flex>
-    </v-row>
-
-    <!-- <v-app>
-      <v-main>
-        <v-container>
-          <v-layout v-for="productd in product" :key="productd.id" row>
-            <v-flex md-6>
-              <img :src="productd.image" alt="" />
-            </v-flex>
-            <v-flex md-6>
-              <img :src="productd.image" alt="" />
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-main>
-    </v-app> -->
-
-    <!-- <div v-for="productd in product" :key="productd.id">
-      <v-row>
-        <v-col v-for="n in 1" :key="n" class="d-flex child-flex" cols="4">
-          <v-img
-            :src="productd.images[0]"
-            :lazy-src="productd.images[0]"
-            aspect-ratio="1"
-            class="grey lighten-2"
+    <v-container class="pa-4 text-center">
+      <v-row class="fill-height" align="center" justify="center">
+        <template>
+          <v-col
+            v-for="item in product"
+            :key="item.id"
+            cols="12"
+            lg="2"
+            md="3"
+            sm="4"
           >
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                    </v-row>
-            </template>
-          </v-img>
-        </v-col>
+            <!-- <img class="img-fluid" :src="item.image" alt=""> -->
+            <v-img max-height="150" max-width="250" :src="item.image">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="grey lighten-5"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
+          </v-col>
+        </template>
       </v-row>
-    </div> -->
+    </v-container>
   </div>
 </template>
 
