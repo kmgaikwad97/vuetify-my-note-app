@@ -6,7 +6,7 @@
             Delete Task?
         </v-card-title>
 
-        <v-card-text>Are you sure you wanna delete this gosh damm motherfilpping task ?</v-card-text>
+        <v-card-text>Are you sure you wanna delete this task ?</v-card-text>
 
         <v-card-actions>
             <v-spacer></v-spacer>
