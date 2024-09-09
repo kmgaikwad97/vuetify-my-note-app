@@ -84,7 +84,6 @@
 </template>
 
 <script>
-import { auth } from "./plugins/firebase.js";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 
 export default {
@@ -129,7 +128,7 @@ export default {
   },
   methods: {
     logout() {
-      const auth = getAuth(auth);
+      const auth = getAuth();
       signOut(auth).then(() => {
         this.$router.push("/login");
       }).catch((error) => {
