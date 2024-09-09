@@ -13,13 +13,9 @@
 </template>
 
 <script>
-// import FieldAddTask from '@/components/Todo';
 export default {
   name: "Home",
-  components: {
-    // 'field-add-task':FieldAddTask
-    // child components
-    
+  components: {  
     "list-task": require("@/components/Todo/ListTasks.vue").default,
     "no-task": require("@/components/Todo/NoTasks.vue").default,
     "button-done-sorting": require("@/components/Todo/ButtonDoneSorting.vue").default,
