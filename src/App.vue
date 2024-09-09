@@ -84,7 +84,6 @@
 </template>
 
 <script>
-// import { auth } from "./plugins/firebase.js";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 
 export default {
