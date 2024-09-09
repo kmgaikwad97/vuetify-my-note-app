@@ -13,7 +13,6 @@
             md="3"
             sm="4"
           >
-            <!-- <img class="img-fluid" :src="item.image" alt=""> -->
             <v-img max-height="150" max-width="250" :src="item.image">
               <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
@@ -93,11 +92,9 @@ export default {
     };
   },
   async mounted() {
-    // const result = await axios.get("https://api.escuelajs.co/api/v1/products");
+
     const result = await axios.get("https://fakestoreapi.com/products/");
-    console.log("data", result);
     this.product = result.data;
-    // console.log(this.product);
   },
 };
 </script>

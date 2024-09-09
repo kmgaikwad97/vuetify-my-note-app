@@ -70,7 +70,6 @@ export default new Vuex.Store({
 
     // **** Search starts ****
     setSearch(state,value){
-      // console.log('value',value);
       state.search = value
     },
     // **** Search ends ****
@@ -79,7 +78,6 @@ export default new Vuex.Store({
     // ******* No Async will Work here ******
 
     addTask(state, newTask){
-      console.log("addtask");
       // let newTask = {
       //   id: Date.now(),
       //   title: newTaskTitle,
@@ -91,27 +89,21 @@ export default new Vuex.Store({
     },
 
     doneTask(state,id) {
-      console.log("data", id);
       let task = state.tasks.filter(task => task.id === id)[0];
       task.done = !task.done;
     },
     deleteTask(state,id) {
-      // console.log("data", id);
       state.tasks = state.tasks.filter(task => task.id !== id);
-      // console.log("asdf", state.tasks);
     },
     updateTaskTitle(state,payload){
-      console.log('payload:',payload);
       let task = state.tasks.filter(task => task.id === payload.id)[0];
       task.title = payload.title
     },
     updateTaskDueDate(state,payload){
-      console.log('payload:',payload);
       let task = state.tasks.filter(task => task.id === payload.id)[0];
       task.dueDate = payload.dueDate
     },
     setTasks(state,tasks){
-      console.log("adf",tasks);
       state.tasks = tasks
     },
     showSnackbar(state,text){
@@ -183,9 +175,7 @@ export default new Vuex.Store({
       commit('setTasks',tasks)
     },
     getTasks({commit}){
-      console.log('getTasks');
       db.collection('tasks').get().then(tasks =>{
-        // console.log('task: ', tasks);
         commit('setTasks',tasks )
       })
     }

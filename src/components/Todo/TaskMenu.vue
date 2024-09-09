@@ -54,7 +54,7 @@ export default {
         title: "Edit",
         icon: "mdi-pencil",
         click() {
-          // console.log("edit");
+
           this.dialogs.edit = true
         },
       },
@@ -62,7 +62,6 @@ export default {
         title: "Due Date",
         icon: "mdi-calendar",
         click() {
-          console.log("due date");
           this.dialogs.dueDate = true
         },
       },
@@ -70,7 +69,6 @@ export default {
         title: "Delete",
         icon: "mdi-delete",
         click() {
-        //   console.log("delete");
           this.dialogs.delete = true
         },
       },
@@ -78,7 +76,6 @@ export default {
         title: "Sort",
         icon: "mdi-drag-horizontal-variant",
         click() {
-        //   console.log("delete");
           this.$store.commit('toggleSorting')
         },
       },
