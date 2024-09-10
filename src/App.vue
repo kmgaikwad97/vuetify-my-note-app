@@ -28,7 +28,7 @@
 
       <!-- Add Logout button at the bottom -->
       <v-spacer></v-spacer>
-      <v-list-item cla @click="logout">
+      <v-list-item v-if="isUserLoggedIn" @click="logout">
         <v-btn class="ma-2" color="primary">
         Logout
         <v-icon icon="mdi-logout" end></v-icon>
@@ -102,6 +102,7 @@ export default {
       email: "",
       username: "",
       userPhotoURL: "https://via.placeholder.com/150",
+      isUserLoggedIn: false, 
       items: [
         {
           title: "Todo",
@@ -153,10 +154,12 @@ export default {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        this.isUserLoggedIn = true; 
         this.email = user.email;
         this.username = user.email.substring(0, user.email.indexOf("@"));
         this.userPhotoURL = user.photoURL || this.userPhotoURL;
       } else {
+        this.isUserLoggedIn = false; 
         this.email = "";
         this.username = "";
         this.userPhotoURL = "https://via.placeholder.com/150";
